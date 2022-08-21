@@ -42,7 +42,7 @@ class GetPricesCommand extends Command
         $caliber = $input->getArgument('caliber');
         $store = $input->getArgument('store');
 
-        $price = $this->priceImporter->getPrice();
+        $price = $this->priceImporter->crawl();
 
 
         if ($caliber) {
@@ -56,7 +56,7 @@ class GetPricesCommand extends Command
             // ...
         }
 
-        $io->success(sprintf('Price = %s', $price));
+        $io->success(sprintf('Price = %s',null));
 
         return Command::SUCCESS;
     }
